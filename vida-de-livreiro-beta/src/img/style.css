@@ -1,0 +1,61 @@
+
+@import url(http://fonts.googleapis.com/css?family=Poiret+One);
+@import url(http://fonts.googleapis.com/css?family=Indie+Flower);
+@import url(http://fonts.googleapis.com/css?family=Jura);
+@import url(http://fonts.googleapis.com/css?family=Raleway);
+@import url(http://fonts.googleapis.com/css?family=Slabo+27px);
+
+body {
+    background: url(background.png);
+    background-repeat: repeat-x repeat-y;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+   flex: 1 0 auto;
+}
+
+ footer {
+     background:url(rodape.png) repeat-x;
+ }
+
+ h5 {
+      font-size:18px;
+			color:#ffffff;
+			text-transform: uppercase;
+			font-weight: bolder;
+			text-shadow: 1px 1px 1px #000000;
+			text-align: center;
+			font-family: 'Poiret One', cursive;
+			background:#00bfa5;
+ }
+
+ h5.titulo {
+           
+      font-family: 'Indie Flower', cursive;
+			font-size: 34px;
+		  text-transform:capitalize;
+      background:#f8bbd0;
+      width: 100%;
+ }
+
+
+img#footers:hover{
+/*rotação*/
+-moz-transform: scale(1.1) rotate(360deg) translateX(1px) translateY(1px) skewX(1deg) skewY(1deg);
+-webkit-transform: scale(1.1) rotate(360deg) translateX(1px) translateY(1px) skewX(1deg) skewY(1deg);
+-o-transform: scale(1.1) rotate(360deg) translateX(1px) translateY(1px) skewX(1deg) skewY(1deg);
+-ms-transform: scale(1.1) rotate(360deg) translateX(1px) translateY(1px) skewX(1deg) skewY(1deg);
+transform: scale(1.1) rotate(360deg) translateX(1px) translateY(1px) skewX(1deg) skewY(1deg);
+opacity: 0.5;
+}
+
+#escondida {
+  display: none;
+  padding-bottom: 4%;
+}
