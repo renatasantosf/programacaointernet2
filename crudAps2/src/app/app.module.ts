@@ -14,6 +14,7 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {path: '', redirectTo:'lista', pathMatch: 'full' },
   {path: 'lista', component: TabelaPedidosComponent },
+  {path: 'edicao/:cod', component: FormularioPedidosComponent },
   { path: 'realizarpedido', component: FormularioPedidosComponent }
 ]
 

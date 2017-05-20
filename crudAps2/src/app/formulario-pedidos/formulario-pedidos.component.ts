@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Pedido } from "app/pedido";
 import { CrudPedidosService } from "app/crud-pedidos.service";
-import { Router } from "@angular/router";
+import { Router, ActivatedRoute} from "@angular/router";
+
 
 @Component({
   selector: 'app-formulario-pedidos',
@@ -12,32 +13,38 @@ export class FormularioPedidosComponent implements OnInit {
   
   titulo = "Cadastro";
   pedido:Pedido;
+  codigo:number;
 
 
-
-  constructor(private servico: CrudPedidosService, private router: Router) { }
+  constructor(private servico: CrudPedidosService, private router: Router,
+  private rota:ActivatedRoute) { }
 
   ngOnInit() {
-    this.pedido = new Pedido();
+    this.codigo = this.rota.snapshot.params['cod'];
+
+    if(isNaN(this.codigo)) {
+      this.pedido = new Pedido();
+    } else {
+      this.pedido = Object.assign({},
+        this.servico.getPedidoPorCodigo(this.codigo));
+    }
+
   }
 
   salvarPedido() {
-    this.servico.adicionarPedido(this.pedido);
-    //this.pedido = new Pedido();
+    if(isNaN(this.codigo)) {
+      this.servico.adicionarPedido(this.pedido);
+      this.pedido = new Pedido();
+    } else {
+      this.servico.editarPedido(this.codigo, this.pedido);
+    }
     this.router.navigate(['/lista']);
 
   }
 
   cancelar() {
-    //this.pedido = new Pedido();
-    this.router.navigate(['/lista']);
+      this.router.navigate(['/lista']);
   }
   
-  editar() {
 
-  }
-
-  remover() {
-    
-  }
 }

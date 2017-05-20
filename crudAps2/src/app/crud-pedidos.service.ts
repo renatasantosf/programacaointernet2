@@ -18,9 +18,24 @@ export class CrudPedidosService {
 
   }
 
-  removerPedido(pedido: Pedido,index:number) {
-      index = this.pedidos.indexOf(pedido); 
-      this.pedidos.splice(index, 1); 
+
+  getPedidoPorCodigo(codigo:number) {
+      return(this.pedidos.find(pedido => pedido.codigo==codigo));
   }
+
+  removerPedido(pedido:Pedido) {
+      let indice = this.pedidos.indexOf(pedido, 0);
+      if(indice > -1) {
+        this.pedidos.splice(indice,1);
+      }
+  }
+  
+  editarPedido(codigo:number, pedido: Pedido) {
+      let indice = this.pedidos.indexOf(this.getPedidoPorCodigo(codigo), 0);
+      this.pedidos[indice] = pedido;
+  }
+
+  
+
 
 }

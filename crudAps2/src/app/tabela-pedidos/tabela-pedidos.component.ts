@@ -16,8 +16,8 @@ export class TabelaPedidosComponent implements OnInit {
     this.pedidos = this.servico.getPedidos();
 
   }
-  remover(pedido: Pedido,index:number) {
-      this.servico.removerPedido(pedido,index);
+  remover(pedido:Pedido) {
+    this.servico.removerPedido(pedido);
   }
 
 }
