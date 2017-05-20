@@ -9,11 +9,15 @@ import { CrudPedidosService } from "app/crud-pedidos.service";
 })
 export class TabelaPedidosComponent implements OnInit {
   pedidos: Pedido[] = [];
+  titulo = "Pedidos";
   constructor(private servico: CrudPedidosService) { }
 
   ngOnInit() {
     this.pedidos = this.servico.getPedidos();
 
+  }
+  remover(pedido: Pedido,index:number) {
+      this.servico.removerPedido(pedido,index);
   }
 
 }

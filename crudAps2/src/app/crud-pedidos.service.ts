@@ -18,4 +18,9 @@ export class CrudPedidosService {
 
   }
 
+  removerPedido(pedido: Pedido,index:number) {
+      index = this.pedidos.indexOf(pedido); 
+      this.pedidos.splice(index, 1); 
+  }
+
 }

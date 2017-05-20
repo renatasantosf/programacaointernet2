@@ -1,4 +1,4 @@
-
+ <h5 class="titulo"> {{titulo}} </h5>
 <table>
     <tr>  
         <th> Código </th> <th> Nome do Livro </th> 
@@ -7,8 +7,8 @@
     <tr *ngFor="let pedido of pedidos">
         <td> {{pedido.codigo}} </td> <td>  {{pedido.nomeLivro}} </td>
         <td> {{pedido.descricao}} </td> 
-        <td> <a class="waves-effect waves-light btn pink accent-1">Editar</a> </td>
-        <td> <a class="waves-effect waves-light btn  pink accent-2">Remover</a> </td>
+        <td> <a class="waves-effect waves-light btn pink accent-1" >Editar</a> </td>
+        <td> <a class="waves-effect waves-light btn  pink accent-2" (click) = "remover(pedido,codigo)">Remover</a> </td>
     </tr>
     
   </table>
