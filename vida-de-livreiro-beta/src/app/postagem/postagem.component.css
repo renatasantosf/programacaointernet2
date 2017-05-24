@@ -1,25 +1,9 @@
-@import url(http://fonts.googleapis.com/css?family=Poiret+One);
-@import url(http://fonts.googleapis.com/css?family=Indie+Flower);
-@import url(http://fonts.googleapis.com/css?family=Jura);
-@import url(http://fonts.googleapis.com/css?family=Raleway);
-@import url(http://fonts.googleapis.com/css?family=Slabo+27px);
 
 #escondida {
   display: none;
   padding-bottom: 4%;
 }
 
-h5.titulo {
-      font-family: 'Indie Flower', cursive;
-			font-size: 34px;
-		  text-transform:capitalize;
-      background:#f8bbd0;
-      width: 100%;
-      color:#ffffff;
-			font-weight: bolder;
-			text-shadow: 1px 1px 1px #000000;
-			text-align: center;
-	
- }
+
 
 

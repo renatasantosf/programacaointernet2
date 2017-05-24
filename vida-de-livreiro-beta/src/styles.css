@@ -1,4 +1,37 @@
+
+@import url(http://fonts.googleapis.com/css?family=Poiret+One);
+@import url(http://fonts.googleapis.com/css?family=Indie+Flower);
+@import url(http://fonts.googleapis.com/css?family=Jura);
+@import url(http://fonts.googleapis.com/css?family=Raleway);
+@import url(http://fonts.googleapis.com/css?family=Slabo+27px);
+
 body {
  background: url(C://programacaoInternetII/vida-de-livreiro-beta/src/img/background.png);
  background-repeat: repeat-x repeat-y;
 }
+h5.titulo {
+      font-family: 'Indie Flower', cursive;
+	  font-size: 34px;
+	  text-transform:capitalize;
+      background:#f8bbd0;
+      width: 100%;
+      color:#ffffff;
+	  font-weight: bolder;
+	  text-shadow: 1px 1px 1px #000000;
+	  text-align: center;
+	
+ }
+
+ h5 {
+            font-size:24px;
+            height:40px;
+            color:#ffffff;
+			text-transform: uppercase;
+			font-weight: bolder;
+			text-shadow: 1px 1px 1px #000000;
+			text-align: center;
+			font-family: 'Poiret One', cursive;
+			background:#00bfa5;
+ }
+
+ 
