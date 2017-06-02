@@ -9,40 +9,37 @@ import { Router, ActivatedRoute } from "@angular/router";
   styleUrls: ['./tabela-pedidos.component.css']
 })
 export class TabelaPedidosComponent implements OnInit {
-  titulo = "Listagem de pedidos";
-  pedidos:Pedido[]  = [];
-  constructor(private servico:CrudUsuariosService, private router:Router){ }
-
-  ngOnInit() {
-    this.pedidos = this.servico.getPedidos();
-    
-  }
-  remover(pedido:Pedido) {
-    this.servico.removerPedido(pedido);
-  }
-
-  sair() {
-     this.router.navigate(['/login']);
-
-
-  }
-
-  getCodigo() {
-     return this.servico.getUsuarioPorCodigo().codigo;
-  }
-
-
-  getNome() {
-    return this.servico.getUsuarioPorCodigo().nome;
   
-  }
+	titulo = "Listagem de pedidos";
+	pedidos:Pedido[]  = [];
+	constructor(private servico:CrudUsuariosService, private router:Router){ }
 
-  getEmail() {
-    return this.servico.getUsuarioPorCodigo().email;
-  }
+	ngOnInit() {
+		this.pedidos = this.servico.getPedidos();
+    }
+	
+	remover(pedido:Pedido) {
+		this.servico.removerPedido(pedido);
+	}
 
-  getSobre() {
-    return this.servico.getUsuarioPorCodigo().sobre;
-  }
+	sair() {
+		this.router.navigate(['/login']);
+	}
+
+	getCodigo() {
+		return this.servico.getUsuarioPorCodigo().codigo;
+	}
+
+	getNome() {
+		return this.servico.getUsuarioPorCodigo().nome;
+  	}
+
+	getEmail() {
+		return this.servico.getUsuarioPorCodigo().email;
+	}
+
+	getSobre() {
+		return this.servico.getUsuarioPorCodigo().sobre;
+	}
 
 }

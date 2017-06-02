@@ -19,21 +19,15 @@ export class PaginaloginComponent implements OnInit {
     
   }
   
-  
-
-
-  logar(email:string, senha:string) {   
-         for(var i =0;i<this.servico.usuarios.length;i++) {
+	logar(email:string, senha:string) {   
+        for(var i =0;i<this.servico.usuarios.length;i++) {
             if(this.servico.usuarios[i].email == email && this.servico.usuarios[i].senha == senha) {
-                  this.servico.indice = i;
-                  this.router.navigate(['/usuario']);
-                  
-              } 
-          }
-        
-    
-    
-     }
+				this.servico.indice = i;
+				this.router.navigate(['/usuario']);
+            } 
+        }
+       
+    }
  
 
 }

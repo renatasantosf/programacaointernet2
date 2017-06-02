@@ -19,8 +19,8 @@ export class EditarUsuarioComponent implements OnInit {
     
 
   ngOnInit() {
+  
     this.codigo = this.rota.snapshot.params['cod'];
-
     this.usuario = Object.assign({},
     this.servico.usuarioPorCodigo(this.codigo));
 
@@ -28,37 +28,30 @@ export class EditarUsuarioComponent implements OnInit {
 
 
    salvarUsuario() {
-   if(isNaN(this.codigo)) {
-     this.servico.adicionarUsuario(this.usuario);
-     this.usuario = new Usuario();
-   } else {
-     if(this.verificarSenha()) {
-          this.servico.atualizaUsuario(this.codigo, this.usuario);
-          alert("Alterado com sucesso!");
-          this.router.navigate(['/usuario']);
-     } else {
-            alert("Senhas incoerentes.");
-     }
-     
-   }
-     
-
-  }
-
-  
-  verificarSenha() {
-    if(this.usuario.senhaAux1 == this.usuario.senhaAux2) {
-        this.usuario.senha = this.usuario.senhaAux1;
-        return true;
-    } else {
-        return false;
+		if(isNaN(this.codigo)) {
+			 this.servico.adicionarUsuario(this.usuario);
+			 this.usuario = new Usuario();
+		} else {
+			if(this.verificarSenha()) {
+				this.servico.atualizaUsuario(this.codigo, this.usuario);
+				alert("Alterado com sucesso!");
+				this.router.navigate(['/usuario']);
+			} else {
+				alert("Senhas incoerentes.");
+			}
+		}
     }
-}
-
- 
-
- 
 
   
+	verificarSenha() {
+		if(this.usuario.senhaAux1 == this.usuario.senhaAux2) {
+			this.usuario.senha = this.usuario.senhaAux1;
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+   
 
 }

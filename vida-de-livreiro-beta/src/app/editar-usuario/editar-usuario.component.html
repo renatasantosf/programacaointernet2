@@ -1,61 +1,57 @@
-<div class="section"></div>
-  <main>
-     <div class="section"></div>
-     <div class="section"></div>
+	<div class="section"></div>
+	<main>
+		<div class="section"></div>
+		<div class="section"></div>
 
-      <div class="container center-align">
+		<div class="container center-align">
        
-        <div class="z-depth-1 grey lighten-4 row" style="padding: 32px 48px 0px 48px; border: 1px solid #FFFFFF;">
-             <h5>Editar usuário</h5>
-          <div class="col s12">
-            <div class='row'>
-              <div class='col s12'>
-              </div>
-            </div>
-             <div class='row'>
-              <div class='input-field col s10'>
-                <input class='validate' type='text' name='nome' 
-                    [(ngModel)] = "usuario.nome" 
-                />
-                <label for='email'>Nome</label>
-              </div>
-            </div>
+			<div class="z-depth-1 grey lighten-4 row" style="padding: 32px 48px 0px 48px; border: 1px solid #FFFFFF;">
+				<h5>Editar usuário</h5>
+				<div class="col s12">
+					<div class='row'>
+						<div class='col s12'></div>
+					</div>
+					<div class='row'>
+						<div class='input-field col s10'>
+							<input class='validate' type='text' name='nome' 
+								[(ngModel)] = "usuario.nome" />
+							<label for='email'>Nome</label>
+						</div>
+					</div>
+          
+					<div class='row'>
+						<div class='input-field col s6'>
+							<input class='validate' type='password' name='password'
+							 [(ngModel)] = "usuario.senhaAux1" />
+							<label for='password'>Senha:</label>
+						</div>
+					</div>
+					
+					<div class='row'>
+						<div class='input-field col s6'>
+							<input class='validate' type='password' name='password'
+						    [(ngModel)] = "usuario.senhaAux2"/>
+							<label for='password'>Confirme a senha:</label>
+						</div>
+					</div>
+					
+					<div class='row'>
+						<div class='input-field col s10'>
+						  <textarea class="materialize-textarea"
+							 [(ngModel)] = "usuario.sobre"></textarea>
+						  <label for='password'>Sobre você:</label>
+						</div>
+					</div>
 
-            
-
-            <div class='row'>
-              <div class='input-field col s6'>
-                <input class='validate' type='password' name='password'
-                
-                   [(ngModel)] = "usuario.senhaAux1" />
-                <label for='password'>Senha:</label>
-              </div>
-            </div>
-              <div class='row'>
-              <div class='input-field col s6'>
-                <input class='validate' type='password' name='password'
-              
-                   [(ngModel)] = "usuario.senhaAux2"/>
-                <label for='password'>Confirme a senha:</label>
-              </div>
-              </div>
-               <div class='row'>
-                <div class='input-field col s10'>
-                  <textarea class="materialize-textarea"
-                     [(ngModel)] = "usuario.sobre"
-                      ></textarea>
-                  <label for='password'>Sobre você:</label>
-              </div>
-              </div>
-
-              <div class='row'>
-                <button (click)='salvarUsuario()' type='submit' name='btn_login' class='col s12 btn btn-large waves-effect pink acent-1'>SALVAR ALTERAÇÃO</button>
-              </div>
-              </div>
-            </div>
+					<div class='row'>
+						<button (click)='salvarUsuario()' type='submit' name='btn_login' class='col s12 btn btn-large waves-effect pink acent-1'>SALVAR ALTERAÇÃO</button>
+					</div>
+					
+				</div>
+			</div>
 
         </div>
 
-    <div class="section"></div>
-    <div class="section"></div>
-  </main>
+		<div class="section"></div>
+		<div class="section"></div>
+	</main>

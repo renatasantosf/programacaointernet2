@@ -11,27 +11,27 @@ import { Router, ActivatedRoute } from "@angular/router";
 export class PostagemComponent implements OnInit {
    comentario:Comentario;
   
-  constructor(private servico:CrudUsuariosService) {
+	constructor(private servico:CrudUsuariosService) {
     
-   }
+	}
 
-  ngOnInit() {
-    this.comentario = new Comentario();
-  }
+	ngOnInit() {
+		this.comentario = new Comentario();
+	}
 
-salvarComentario() {
-    if(this.comentario.nome != null && this.comentario.texto == null) {
-        alert("Preencha o campo comentário.");
-
-    } else {
-      if(this.comentario.nome == null && this.comentario.texto == null) {
-        alert("Campos vazios");
-      } else {
-        this.servico.adicionarComentario(this.comentario);
-        alert("Comentário inserido com sucesso!"+this.comentario.nome+" - "+this.comentario.texto);
-        this.comentario = new Comentario();
-      }
-    }
-}
+	salvarComentario() {
+		if(this.comentario.nome != null && this.comentario.texto == null) {
+			alert("Preencha o campo comentário.");
+		} else {
+			if(this.comentario.nome == null && this.comentario.texto == null) {
+				alert("Campos vazios");
+			} else {
+				this.servico.adicionarComentario(this.comentario);
+				alert("Comentário inserido com sucesso!"+this.comentario.nome+" - "+this.comentario.texto);
+				this.comentario = new Comentario();
+			}
+		}
+	}
+	
 
 }

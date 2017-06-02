@@ -6,9 +6,5 @@ export class Usuario {
     sobre:string;
     senhaAux1:string;
     senhaAux2:string;
-    
-
-
-
-    
+   
 }

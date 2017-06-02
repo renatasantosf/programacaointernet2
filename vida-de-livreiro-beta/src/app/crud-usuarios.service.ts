@@ -12,8 +12,8 @@ export class CrudUsuariosService {
   comentarios:Comentario[] = []
   contatos:Contato[] = []
   parceiros:Parceiro[] = []
-
-
+  
+    
   autoIncrementUsuario: number = 0;
   autoIncrementPedido: number = 0;
   autoIncrementComentario: number = 0;
@@ -74,60 +74,54 @@ export class CrudUsuariosService {
   }
 
 
-adicionarComentario(comentario:Comentario) {
-    comentario.codigo = this.autoIncrementComentario++;
-    this.comentarios.push(comentario);
-  
-}
+	adicionarComentario(comentario:Comentario) {
+		comentario.codigo = this.autoIncrementComentario++;
+		this.comentarios.push(comentario);
+  	}
 
-adicionarContato(contato:Contato) {
-    contato.codigo = this.autoIncrementContato++;
-    this.contatos.push(contato);
-}
+	adicionarContato(contato:Contato) {
+		contato.codigo = this.autoIncrementContato++;
+		this.contatos.push(contato);
+	}
 
-adicionarParceiro(parceiro:Parceiro) {
-    parceiro.codigo = this.autoIncrementParceiro++;
-    this.parceiros.push(parceiro);
-}
+	adicionarParceiro(parceiro:Parceiro) {
+		parceiro.codigo = this.autoIncrementParceiro++;
+		this.parceiros.push(parceiro);
+	}
 
- atualizaUsuario(codigo:number,usuario:Usuario) {
-   let indice = this.usuarios.indexOf(this.usuarioPorCodigo(codigo), 0);
-   this.usuarios[indice] = usuario;
- }
+	atualizaUsuario(codigo:number,usuario:Usuario) {
+	   let indice = this.usuarios.indexOf(this.usuarioPorCodigo(codigo), 0);
+	   this.usuarios[indice] = usuario;
+	}
 
-usuarioPorCodigo(codigo:number) {
-   return(this.usuarios.find(usuario => usuario.codigo == codigo));
-}
+	usuarioPorCodigo(codigo:number) {
+	   return(this.usuarios.find(usuario => usuario.codigo == codigo));
+	}
 
 
    adicionarUsuario(usuario:Usuario) {
       usuario.codigo = this.autoIncrementUsuario++;
       this.usuarios.push(usuario);
-  }
-
- 
+	}
 
 
-gerarSenha(email:string) {
-     for(var i =0;i<this.usuarios.length;i++) {
-       if(this.usuarios[i].email == email) {
-            var senha = Math.floor(Math.random() * 10000000);
-            this.usuarios[i].senha = ""+senha;
-            alert("Sua nova senha é: "+senha+" e será enviada a você por e-mail.");
-            return true;
-       } else {
-         return false;
-       }
-     }
- }
 
-  getUsuarioPorCodigo() {
-    return(this.usuarios.find(usuario => usuario.codigo == this.indice));
-  }
+	gerarSenha(email:string) {
+		for(var i =0;i<this.usuarios.length;i++) {
+			if(this.usuarios[i].email == email) {
+				var senha = Math.floor(Math.random() * 10000000);
+				this.usuarios[i].senha = ""+senha;
+				alert("Sua nova senha é: "+senha+" e será enviada a você por e-mail.");
+				return true;
+			} else {
+				return false;
+			}
+		}
+	}
+
+	getUsuarioPorCodigo() {
+		return(this.usuarios.find(usuario => usuario.codigo == this.indice));
+	}
      
-
-
- 
-
 
 }

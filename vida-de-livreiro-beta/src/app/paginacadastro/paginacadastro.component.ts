@@ -20,30 +20,24 @@ export class PaginacadastroComponent implements OnInit {
   }
 
 
-verificarSenha() {
-    if(this.usuario.senhaAux1 == this.usuario.senhaAux2) {
-        this.usuario.senha = this.usuario.senhaAux1;
-        return true;
-    } else {
-        return false;
-    }
-}
+	verificarSenha() {
+		if(this.usuario.senhaAux1 == this.usuario.senhaAux2) {
+			this.usuario.senha = this.usuario.senhaAux1;
+			return true;
+		} else {
+			return false;
+		}
+	}
 
     salvarUsuario() {
-      if(this.verificarSenha()) {
-
-         this.servico.adicionarUsuario(this.usuario);
-         this.usuario = new Usuario();
-         alert("Cadastrado com sucesso!");
-         this.router.navigate(['/login']);
-
-      } else {
-
-        alert("Senha incoerente.");
-
-      }
-           
-        
+		if(this.verificarSenha()) {
+			this.servico.adicionarUsuario(this.usuario);
+			this.usuario = new Usuario();
+			alert("Cadastrado com sucesso!");
+			this.router.navigate(['/login']);
+		} else {
+			alert("Senha incoerente.");
+		} 
     }
  
 

@@ -10,19 +10,17 @@ import { ModalCadastroParceirosComponent } from "app/modal-cadastro-parceiros/mo
 })
 export class PaginaparceirosComponent {
   
-
-    
-  constructor(private modalService: MzModalService) {
-   
-  }
-
-public openServiceModal() {
-    this.modalService.open(ModalCadastroParceirosComponent);
-  }
- 
-
   
-  ngOnInit() {
-  }
+	constructor(private modalService: MzModalService) {
+	   
+	}
+  
+	ngOnInit() {
+	
+	}
 
+	public openServiceModal() {
+		this.modalService.open(ModalCadastroParceirosComponent);
+	}
+ 
 }

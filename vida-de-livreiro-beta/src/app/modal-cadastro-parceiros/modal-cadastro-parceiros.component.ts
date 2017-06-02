@@ -13,34 +13,32 @@ export class ModalCadastroParceirosComponent extends MzBaseModal implements OnIn
     parceiro:Parceiro;
 
 
-  constructor(private servico:CrudUsuariosService) {
+	constructor(private servico:CrudUsuariosService) {
         super();
     }
 
-  ngOnInit() {
-    this.parceiro = new Parceiro();
-   
-  }
+	ngOnInit() {
+		this.parceiro = new Parceiro();   
+	}
 
 
-  salvarParceiro() {
-      if(this.parceiro.email == null) {
-        alert("O e-mail é obrigatório.");
-      } else {
-          if(this.parceiro.urlPagina == null) {
-            alert("O URL é obrigatório.");
-          } else {
-              this.servico.adicionarParceiro(this.parceiro);
-              alert("Parceiro "+this.parceiro.nomePagina+" cadastrado com sucesso!");
-          }
-      }
-  }
+	salvarParceiro() {
+		if(this.parceiro.email == null) {
+			alert("O e-mail é obrigatório.");
+		} else {
+			if(this.parceiro.urlPagina == null) {
+				alert("O URL é obrigatório.");
+			} else {
+				this.servico.adicionarParceiro(this.parceiro);
+				alert("Parceiro "+this.parceiro.nomePagina+" cadastrado com sucesso!");
+			}
+		}
+	}
 
-  limpar() {
-    this.parceiro = new Parceiro();
-
-  }
+	
+	limpar() {
+		this.parceiro = new Parceiro();
+	}
 
  
-
 }

@@ -18,48 +18,46 @@ export class FormPedidosComponent implements OnInit {
   constructor(private servico:CrudUsuariosService,
   private router:Router, private rota:ActivatedRoute) { }
 
-  ngOnInit() {
-    this.codigo = this.rota.snapshot.params['cod'];
+	ngOnInit() {
+		this.codigo = this.rota.snapshot.params['cod'];
 
-    if(isNaN(this.codigo)) {
-      this.pedido = new Pedido();
-    } else {
-      this.pedido = Object.assign({},
-        this.servico.getPedidoPorCodigo(this.codigo));
-    }
-  }
+		if(isNaN(this.codigo)) {
+			this.pedido = new Pedido();
+		} else {
+			this.pedido = Object.assign({},
+			this.servico.getPedidoPorCodigo(this.codigo));
+		}
+	}
 
-  salvarPedido() {
-   if(isNaN(this.codigo)) {
-     this.servico.adicionarPedido(this.pedido);
-     this.pedido = new Pedido();
-   } else {
-     this.servico.atualizaPedido(this.codigo, this.pedido);
-   }
-      this.router.navigate(['/usuario']);
+	salvarPedido() {
+		if(isNaN(this.codigo)) {
+			this.servico.adicionarPedido(this.pedido);
+			this.pedido = new Pedido();
+		} else {
+			this.servico.atualizaPedido(this.codigo, this.pedido);
+		}
+		
+		this.router.navigate(['/usuario']);
+	}
 
-  }
+	cancelar() {
+		this.router.navigate(['/usuario']);
+	}
 
-  cancelar() {
-    this.router.navigate(['/usuario']);
+	getCodigo() {
+		return this.servico.getUsuarioPorCodigo().codigo;
+	}
 
-  }
+	getNome() {
+		return this.servico.getUsuarioPorCodigo().nome;
+  	}
 
-   getCodigo() {
-     return this.servico.getUsuarioPorCodigo().codigo;
-  }
+	getEmail() {
+		return this.servico.getUsuarioPorCodigo().email;
+	}
 
-
-  getNome() {
-    return this.servico.getUsuarioPorCodigo().nome;
-  
-  }
-
-  getEmail() {
-    return this.servico.getUsuarioPorCodigo().email;
-  }
-
-  getSobre() {
-    return this.servico.getUsuarioPorCodigo().sobre;
-  }
+	getSobre() {
+		return this.servico.getUsuarioPorCodigo().sobre;
+	}
+	
 }

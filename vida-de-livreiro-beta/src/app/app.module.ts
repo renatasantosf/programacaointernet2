@@ -29,20 +29,19 @@ import { SenhaEsquecidaComponent } from './senha-esquecida/senha-esquecida.compo
 enableProdMode();
 
 const routes: Routes = [ 
-  { path: '', redirectTo: 'inicial', pathMatch: 'full' },
-  { path:'inicial', component: PaginainicialComponent},
-  { path:'parceiros', component: PaginaparceirosComponent},
-  { path:'contato', component: PaginacontatoComponent},
-  { path:'sobre', component: PaginasobreComponent},
-  { path:'login', component: PaginaloginComponent},
-  { path:'cadastro', component: PaginacadastroComponent},
-  { path:'usuario', component: TabelaPedidosComponent},
-  { path: 'editar-usuario/:cod', component: EditarUsuarioComponent },
-  { path:'form-pedidos', component: FormPedidosComponent},
-  { path:'edicao/:cod', component: FormPedidosComponent},
-  { path:'esqueceu', component: SenhaEsquecidaComponent },
+	  { path: '', redirectTo: 'inicial', pathMatch: 'full' },
+	  { path:'inicial', component: PaginainicialComponent},
+	  { path:'parceiros', component: PaginaparceirosComponent},
+	  { path:'contato', component: PaginacontatoComponent},
+	  { path:'sobre', component: PaginasobreComponent},
+	  { path:'login', component: PaginaloginComponent},
+	  { path:'cadastro', component: PaginacadastroComponent},
+	  { path:'usuario', component: TabelaPedidosComponent},
+	  { path: 'editar-usuario/:cod', component: EditarUsuarioComponent },
+	  { path:'form-pedidos', component: FormPedidosComponent},
+	  { path:'edicao/:cod', component: FormPedidosComponent},
+	  { path:'esqueceu', component: SenhaEsquecidaComponent },
   
- 
 ];
 
 @NgModule({

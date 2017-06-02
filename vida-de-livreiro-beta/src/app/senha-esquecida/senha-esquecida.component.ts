@@ -12,20 +12,19 @@ export class SenhaEsquecidaComponent implements OnInit {
   email:string;
 
 
-  constructor(private servico: CrudUsuariosService,private router: Router) {
+	constructor(private servico: CrudUsuariosService,private router: Router) {
     
- 
-  }
+	}
 
-  ngOnInit() {
-  }
+	ngOnInit() {
+	}
 
-  recuperarConta() {
-    if(this.servico.gerarSenha(this.email)) {
-      this.router.navigate(['/login']);
-    } else {
-      alert("E-mail não cadastrado.");
-    }
-  }
+	recuperarConta() {
+		if(this.servico.gerarSenha(this.email)) {
+			this.router.navigate(['/login']);
+		} else {
+			alert("E-mail não cadastrado.");
+		}
+	}
 
 }
