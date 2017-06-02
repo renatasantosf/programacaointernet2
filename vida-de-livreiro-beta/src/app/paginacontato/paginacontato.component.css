@@ -1,3 +1,10 @@
-form {
+#form {
       background:#fff;
+      
 }
+
+.row {
+      padding-left:3%;
+      padding-right:3%;
+}
+

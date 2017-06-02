@@ -6,7 +6,7 @@
 @import url(http://fonts.googleapis.com/css?family=Slabo+27px);
 
 body {
- background: url(C://programacaoInternetII/vida-de-livreiro-beta/src/img/background.png);
+ background: url(C://programacaointernet2/vida-de-livreiro-beta/src/img/background.png);
  background-repeat: repeat-x repeat-y;
 }
 h5.titulo {
@@ -14,7 +14,6 @@ h5.titulo {
 	  font-size: 34px;
 	  text-transform:capitalize;
       background:#f8bbd0;
-      width: 100%;
       color:#ffffff;
 	  font-weight: bolder;
 	  text-shadow: 1px 1px 1px #000000;
@@ -24,7 +23,6 @@ h5.titulo {
 
  h5 {
             font-size:24px;
-            height:40px;
             color:#ffffff;
 			text-transform: uppercase;
 			font-weight: bolder;
@@ -34,4 +32,5 @@ h5.titulo {
 			background:#00bfa5;
  }
 
+ 
  

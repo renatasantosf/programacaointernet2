@@ -1,0 +1,53 @@
+<div class="container">
+         <div class="row">
+           <div class="col s12">
+                     <h5 class="titulo"> {{titulo}} </h5>                 
+                      <td> <a class="waves-effect waves-light btn black" routerLink = "/form-pedidos">Novo Pedido</a> </td>
+                       <td> <a class="waves-effect waves-light btn black" (click) = "sair()">SAIR</a> </td>    
+                  <div class="col s8" style="background-color:#FFFFFF">            
+                          <table class="responsive-table">
+                                <thead>
+                                  <tr>
+                                      <th>Código</th>
+                                      <th>Nome da obra</th>
+                                      <th>Autor</th>
+                                      <th>Tipo de Literatura</th>
+                                      <th>Descrição</th>
+                                      <th>Editar</th>
+                                      <th> Remover</th>
+                                  </tr>
+                                </thead>
+
+                                <tbody>
+                                  <tr *ngFor="let pedido of pedidos">
+                                                                
+                                        <td *ngIf="pedido.cod_usuario == getCodigo()">{{pedido.codigo}}</td>
+                                        <td *ngIf="pedido.cod_usuario == getCodigo()">{{pedido.nomeobra}}</td>
+                                        <td *ngIf="pedido.cod_usuario == getCodigo()">{{pedido.autor}}</td>
+                                        <td *ngIf="pedido.cod_usuario == getCodigo()">{{pedido.tipolit}}</td>
+                                        <td *ngIf="pedido.cod_usuario == getCodigo()">{{pedido.descricao}}</td>
+                                        <td *ngIf="pedido.cod_usuario == getCodigo()"> <a class="waves-effect waves-light btn pink accent-1" [routerLink] = "['/edicao',pedido.codigo]">Editar</a> </td>
+                                        <td *ngIf="pedido.cod_usuario == getCodigo()"> <a class="waves-effect waves-light btn  pink accent-2" routerLink="/usuario" (click) = "remover(pedido)">Remover</a> </td>
+                                     
+                                </tr>
+                                 
+                                 
+                                
+                                </tbody>
+                              </table>
+                          </div>
+                              <div class="col s1"></div>
+                              <div style="background:#ffffff" class="col s3">
+                                      <h5> Perfil </h5>
+                                     
+                                      <div class="card-content">
+                                        <p> Nome: {{getNome()}} </p>
+                                        <p> E-mail: {{getEmail()}} </p>
+                                        <p> Sobre: {{getSobre()}} </p>
+                                      
+                                      
+                                        <div class="center-align"> <a [routerLink] = "['/editar-usuario',getCodigo()]" class="waves-effect waves-light btn pink accent-1">Editar</a></div> 
+                                      
+                               </div>
+             </div>
+</div>

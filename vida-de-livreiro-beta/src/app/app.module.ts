@@ -19,7 +19,12 @@ import { PaginacontatoComponent } from './paginacontato/paginacontato.component'
 import { PaginaloginComponent } from './paginalogin/paginalogin.component';
 import { RouterModule, Routes } from '@angular/router';
 import { PaginacadastroComponent } from './paginacadastro/paginacadastro.component';
-import { PaginausuarioComponent } from './paginausuario/paginausuario.component';
+import { CrudUsuariosService } from "app/crud-usuarios.service";
+import { FormPedidosComponent } from './form-pedidos/form-pedidos.component';
+import { TabelaPedidosComponent } from './tabela-pedidos/tabela-pedidos.component';
+import { EditarUsuarioComponent } from './editar-usuario/editar-usuario.component';
+import { ModalCadastroParceirosComponent } from './modal-cadastro-parceiros/modal-cadastro-parceiros.component';
+import { SenhaEsquecidaComponent } from './senha-esquecida/senha-esquecida.component';
 
 enableProdMode();
 
@@ -31,9 +36,13 @@ const routes: Routes = [
   { path:'sobre', component: PaginasobreComponent},
   { path:'login', component: PaginaloginComponent},
   { path:'cadastro', component: PaginacadastroComponent},
-  { path:'usuario', component: PaginausuarioComponent},
-
-
+  { path:'usuario', component: TabelaPedidosComponent},
+  { path: 'editar-usuario/:cod', component: EditarUsuarioComponent },
+  { path:'form-pedidos', component: FormPedidosComponent},
+  { path:'edicao/:cod', component: FormPedidosComponent},
+  { path:'esqueceu', component: SenhaEsquecidaComponent },
+  
+ 
 ];
 
 @NgModule({
@@ -51,9 +60,13 @@ const routes: Routes = [
     PaginacontatoComponent,
     PaginaloginComponent,
     PaginacadastroComponent,
-    PaginausuarioComponent,
-    
+    TabelaPedidosComponent,
+    FormPedidosComponent,
+    EditarUsuarioComponent,
+    ModalCadastroParceirosComponent,
+    SenhaEsquecidaComponent,
   ],
+   entryComponents: [ModalCadastroParceirosComponent], 
   imports: [
     BrowserModule,
     FormsModule,
@@ -62,7 +75,7 @@ const routes: Routes = [
     MaterializeModule.forRoot(),
     RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [CrudUsuariosService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

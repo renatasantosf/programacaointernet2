@@ -1,17 +1,8 @@
-footer {
-     background:url(C://programacaoInternetII/vida-de-livreiro-beta/src/img/rodape.png) repeat-x;
+﻿footer {
+     background:url(C://programacaointernet2/vida-de-livreiro-beta/src/img/rodape.png) repeat-x;
  }
 
- h5 {
-      font-size:18px;
-			color:#ffffff;
-			text-transform: uppercase;
-			font-weight: bolder;
-			text-shadow: 1px 1px 1px #000000;
-			text-align: center;
-			font-family: 'Poiret One', cursive;
-			background:#00bfa5;
- }
+
 
 img#footers:hover{
 /*rotação*/
