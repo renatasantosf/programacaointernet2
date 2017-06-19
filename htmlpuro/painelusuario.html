@@ -1,0 +1,147 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>VidaDeLivreiroBeta</title>
+		<meta charset="utf-8">
+		<base href="/">
+		
+           <!--imports-->
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0"/>  
+          <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+          <style>
+          		body {
+          			background-image:url(C://Users/rsfraga/Documents/background.png) repeat-x repeat-y;
+          		}
+          </style>
+	</head>
+	<body>
+		<ul id="slide-out" class="side-nav">
+		    <li>
+		    	<div class="userView">
+			      	<div class="background">
+			        	<img src="C://Users/rsfraga/Documents/img.jpg">
+			      	</div>
+		      		<a href="#!user"><img class="circle" src="C://Users/rsfraga/Documents/pooh.jpg"></a>
+		     		<a href="#!name"><span class="white-text name">Administrador Master</span></a>
+		      		<a href="#!email"><span class="white-text email">renatasfraga@gmail.com</span></a>
+		    	</div>
+		    </li>
+		    <li>
+		    	<a href="#!">Publicações</a>
+		    </li>
+		    <li>
+		    	<div class="divider"></div>
+		    </li>
+		    <li>
+		    	<a href="#!">Comentários</a>
+		    </li>
+		    <li>
+		    	<div class="divider"></div>
+		    </li>
+		    <li>
+		    	<a href="#!">Contatos</a>
+		    </li>
+		    <li>
+		    	<div class="divider"></div>
+		    </li>
+		    <li>
+		    	<a href="#!">Parceiros</a>
+		    </li>
+		     <li>
+		    	<div class="divider"></div>
+		    </li>
+		    <li>
+		    	<a href="#!">Sair</a>
+		    </li>
+
+		</ul>
+		<div class="container">
+		
+				<a class="btn-floating btn-large red btn button-collapse" data-activates="slide-out"> <i class="material-icons">menu</i></a>
+		  		
+				<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+
+
+				<div id="comentarios"> 
+				<h1> Comentários</h1>
+					  <ul class="collapsible popout" data-collapsible="accordion">
+		        	    <li>
+					    <div class="collapsible-header"><i class="material-icons">library_books</i>Comentário 1</div>
+					      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+						</li>
+		          	    <li>
+					      <div class="collapsible-header"><i class="material-icons">library_books</i>Comentário 1</div>
+					      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+					    </li>
+					  </ul>
+				</div>
+
+				<div id="publicacoes">
+				<h1> Publicações </h1>
+					  <a class="waves-effect waves-light btn">Novo</a>
+
+				<table>
+			        <thead>
+			          <tr>
+			              <th>Id</th>
+			              <th>Titulo</th>
+			              <th>Data</th>
+			              <th>Editar</th>
+			              <th>Remover</th>
+			          </tr>
+			        </thead>
+			        <tbody>
+			          <tr>
+			            <td>1</td>
+			            <td>Primeira Postagem</td>
+			            <td>12/05/2017</td>
+			            <td> <a class="waves-effect waves-light btn">Editar</a></td>
+			            <td><a class="waves-effect waves-light btn">Remover</a></td>
+			          </tr>
+			        </tbody>
+		      </table>
+
+
+				</div>
+
+				<div id="contatos"> 
+				<h1> Contatos </h1>
+					  <ul class="collapsible popout" data-collapsible="accordion">
+		        	    <li>
+					    <div class="collapsible-header"><i class="material-icons">library_books</i>Nome e sobrenome</div>
+					      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+						</li>
+		          	    <li>
+					      <div class="collapsible-header"><i class="material-icons">library_books</i>Nome e sobrenome</div>
+					      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+					    </li>
+					  </ul>
+				</div>
+
+
+				<div id="parceiros"> 
+				<h1> Parceiros </h1>
+					  <ul class="collapsible popout" data-collapsible="accordion">
+		        	    <li>
+					    <div class="collapsible-header"><i class="material-icons">library_books</i>Nome da Página</div>
+					      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+						</li>
+		          	    <li>
+					      <div class="collapsible-header"><i class="material-icons">library_books</i>Nome da Página</div>
+					      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+					    </li>
+					  </ul>
+				</div>
+
+		</div>
+      
+			<script type="text/javascript">
+				$(document).ready(function(){
+					$(".button-collapse").sideNav();
+											   
+				});
+			</script>	
+</body>
+</html>
