@@ -25,6 +25,12 @@ import { TabelaPedidosComponent } from './tabela-pedidos/tabela-pedidos.componen
 import { EditarUsuarioComponent } from './editar-usuario/editar-usuario.component';
 import { ModalCadastroParceirosComponent } from './modal-cadastro-parceiros/modal-cadastro-parceiros.component';
 import { SenhaEsquecidaComponent } from './senha-esquecida/senha-esquecida.component';
+import { PaineladministradorComponent } from './paineladministrador/paineladministrador.component';
+import { PainelcontatosComponent } from './painelcontatos/painelcontatos.component';
+import { ComentariosComponent } from './comentarios/comentarios.component';
+import { PainelcomentariosComponent } from './painelcomentarios/painelcomentarios.component';
+import { PaineladdpostagemComponent } from './paineladdpostagem/paineladdpostagem.component';
+import { PaineleditpostagemComponent } from './paineleditpostagem/paineleditpostagem.component';
 
 enableProdMode();
 
@@ -64,6 +70,12 @@ const routes: Routes = [
     EditarUsuarioComponent,
     ModalCadastroParceirosComponent,
     SenhaEsquecidaComponent,
+    PaineladministradorComponent,
+    PainelcontatosComponent,
+    ComentariosComponent,
+    PainelcomentariosComponent,
+    PaineladdpostagemComponent,
+    PaineleditpostagemComponent,
   ],
    entryComponents: [ModalCadastroParceirosComponent], 
   imports: [
