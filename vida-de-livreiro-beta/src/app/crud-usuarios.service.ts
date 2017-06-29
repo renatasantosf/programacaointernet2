@@ -16,7 +16,7 @@ export class CrudUsuariosService {
     
   autoIncrementUsuario: number = 0;
   autoIncrementPedido: number = 0;
-  autoIncrementComentario: number = 0;
+ 
   autoIncrementContato: number = 0;
   autoIncrementParceiro: number = 0;
   
@@ -25,9 +25,7 @@ export class CrudUsuariosService {
 
   constructor() { }
 
-  getComentarios() {
-    return this.comentarios;
-  }
+  
 
   getContatos() {
     return this.contatos;
@@ -74,11 +72,7 @@ export class CrudUsuariosService {
   }
 
 
-	adicionarComentario(comentario:Comentario) {
-		comentario.codigo = this.autoIncrementComentario++;
-		this.comentarios.push(comentario);
-  	}
-
+	
 	adicionarContato(contato:Contato) {
 		contato.codigo = this.autoIncrementContato++;
 		this.contatos.push(contato);
@@ -106,18 +100,7 @@ export class CrudUsuariosService {
 
 
 
-	gerarSenha(email:string) {
-		for(var i =0;i<this.usuarios.length;i++) {
-			if(this.usuarios[i].email == email) {
-				var senha = Math.floor(Math.random() * 10000000);
-				this.usuarios[i].senha = ""+senha;
-				alert("Sua nova senha é: "+senha+" e será enviada a você por e-mail.");
-				return true;
-			} else {
-				return false;
-			}
-		}
-	}
+	
 
 	getUsuarioPorCodigo() {
 		return(this.usuarios.find(usuario => usuario.codigo == this.indice));
