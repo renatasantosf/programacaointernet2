@@ -1,4 +1,3 @@
-
 package dao.impl_BD;
 
 import dao.PostagemDao;
@@ -10,7 +9,6 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import javax.swing.JOptionPane;
 import model.Postagem;
 
 /**
@@ -200,24 +198,6 @@ public class PostagemDaoBd implements PostagemDao {
         return (null);
     }
 
-    @Override
-    public void deletar(int id) {
-          try {
-            String sql = "DELETE FROM postagem WHERE id = ?";
-            
-            
-            conectar(sql);
-            comando.setInt(1, id);
-            comando.executeUpdate();
-            JOptionPane.showMessageDialog(null,"Postagem removida com sucesso.");
-        } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null,"Erro ao remover postagem.");
-            throw new RuntimeException(ex);
-        } finally {
-            fecharConexao();
-        }
-
-   
-    }
+    
     
 }

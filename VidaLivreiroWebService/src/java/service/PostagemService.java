@@ -16,7 +16,7 @@ import model.Postagem;
 @Stateless
 public class PostagemService {
     
-    PostagemDao postagemDao;
+    private PostagemDao postagemDao;
     
     public PostagemService() {
         postagemDao = new PostagemDaoBd();

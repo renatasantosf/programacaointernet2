@@ -30,16 +30,13 @@ public class ComentarioWS {
     @Context
     private UriInfo context;
 
-    /**
-     * Creates a new instance of PostagemWS
-     */
+    
     public ComentarioWS() {
     }
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public List<Comentario> getPostagens() {
-        //return new ArrayList<>();
         return comentarioService.listar();
     }
     
@@ -66,7 +63,7 @@ public class ComentarioWS {
        
     }
     
-    @PUT
+    /*@PUT
     @Path("/{id}")
     @Consumes(MediaType.APPLICATION_JSON)
     public void alterarComentario(@PathParam("id") int id,
@@ -85,6 +82,6 @@ public class ComentarioWS {
         comentarioService.excluir(c);
         return c;
 
-    }
+    } */
 }
 

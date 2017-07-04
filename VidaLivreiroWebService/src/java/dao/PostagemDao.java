@@ -11,7 +11,6 @@ import model.Postagem;
 public interface PostagemDao {
     public void salvar(Postagem postagem);
     public void deletar(Postagem postagem);
-    public void deletar(int id);
     public void atualizar(Postagem postagem);
     public List<Postagem> listar();
     public Postagem procurarPorId(int id);

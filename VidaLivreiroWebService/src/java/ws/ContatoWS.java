@@ -4,11 +4,9 @@ import java.util.List;
 import javax.ejb.EJB;
 import javax.servlet.http.HttpServletResponse;
 import javax.ws.rs.Consumes;
-import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.InternalServerErrorException;
 import javax.ws.rs.POST;
-import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -17,9 +15,6 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.UriInfo;
 import model.Contato;
 import service.ContatoService;
-
-
-
 
 
 @Path("contato")
@@ -40,7 +35,6 @@ public class ContatoWS {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public List<Contato> getContatos() {
-        //return new ArrayList<>();
         return contatoService.listar();
     }
     
@@ -66,7 +60,7 @@ public class ContatoWS {
             }
        
     }
-    
+    /*
     @PUT
     @Path("/{id}")
     @Consumes(MediaType.APPLICATION_JSON)
@@ -89,6 +83,6 @@ public class ContatoWS {
         contatoService.excluir(c);
         return c;
 
-    }
+    } */
 }
 

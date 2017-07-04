@@ -1,11 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package service;
-
-import java.util.ArrayList;
+import dao.ParceiroDao;
+import dao.impl_BD.ParceiroDaoBd;
 import java.util.List;
 import model.Parceiro;
 
@@ -15,45 +10,31 @@ import model.Parceiro;
  */
 
 public class ParceiroService {
-     private List<Parceiro> listaParceiros;
+     private ParceiroDao parceiroDao;
     
     public ParceiroService() {
-        listaParceiros = new ArrayList<>();
+        parceiroDao = new ParceiroDaoBd();
         
     }
     
     public void inserir(Parceiro parceiro) {
-        listaParceiros.add(parceiro);
+        parceiroDao.salvar(parceiro);
     }
     
     public List<Parceiro> listar() {
-        return listaParceiros;
+        return parceiroDao.listar();
     }
     
     public Parceiro buscarPorId(int id) {
-        for(Parceiro p : listaParceiros) {
-            if(p.getId() == id) {
-                return new Parceiro(p.getNomePagina(),p.getUrlPagina(),p.getNomeWebMaster(),p.getEmail());
-          }
-        }
-        return null;
+       return parceiroDao.procurarPorId(id);
     }
     
-    private int getIndice(int id) {
-        for(int i=0;i<listaParceiros.size();i++){
-            if(listaParceiros.get(i).getId() == id) {
-                return i;
-            }
-        }
-        return -1;
-    }
     
     public void atualizar(Parceiro parceiro) {
-        listaParceiros.set(this.getIndice(parceiro.getId()), 
-            parceiro);
+        parceiroDao.atualizar(parceiro);
     }
     
     public void excluir(Parceiro parceiro) {
-        listaParceiros.remove(this.getIndice(parceiro.getId()));
+       parceiroDao.deletar(parceiro);
     }
 }

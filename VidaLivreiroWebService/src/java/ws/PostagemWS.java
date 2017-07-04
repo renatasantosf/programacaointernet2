@@ -67,6 +67,7 @@ public class PostagemWS {
         }
     }
     
+    
     @PUT
     @Path("/{id}")
     @Consumes(MediaType.APPLICATION_JSON)
@@ -88,4 +89,5 @@ public class PostagemWS {
         return p;
 
     }
+    
 }

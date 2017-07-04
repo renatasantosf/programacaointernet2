@@ -189,24 +189,7 @@ public class ParceiroDaoBd implements ParceiroDao {
         return (null);
     }
 
-    @Override
-    public void deletar(int id) {
-          try {
-            String sql = "DELETE FROM parceiro WHERE id = ?";
-                        
-            conectar(sql);
-            comando.setInt(1, id);
-            comando.executeUpdate();
-            JOptionPane.showMessageDialog(null,"Parceiro removido com sucesso.");
-        } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null,"Erro ao remover Parceiro.");
-            throw new RuntimeException(ex);
-        } finally {
-            fecharConexao();
-        }
-
-   
-    }
+    
     
     
 }

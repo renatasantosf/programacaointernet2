@@ -66,7 +66,7 @@ public class ParceiroWS {
             }
        
     }
-    
+    /*
     @PUT
     @Path("/{id}")
     @Consumes(MediaType.APPLICATION_JSON)
@@ -88,6 +88,6 @@ public class ParceiroWS {
         parceiroService.excluir(p);
         return p;
 
-    }
+    }*/
 }
 

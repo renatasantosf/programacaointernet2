@@ -11,7 +11,6 @@ import model.Contato;
 public interface ContatoDao {
     public void salvar(Contato contato);
     public void deletar(Contato contato);
-    public void deletar(int id);
     public void atualizar(Contato contato);
     public List<Contato> listar();
     public Contato procurarPorId(int id);

@@ -1,12 +1,9 @@
-
 package service;
-
-
-import java.util.ArrayList;
+import dao.ComentarioDao;
+import dao.impl_BD.ComentarioDaoBd;
 import java.util.List;
 import javax.ejb.Stateless;
 import model.Comentario;
-
 
 /**
  *
@@ -15,45 +12,31 @@ import model.Comentario;
 @Stateless
 public class ComentarioService {
     
-    private List<Comentario> listaComentarios;
+    private ComentarioDao comentarioDao;
     
     public ComentarioService() {
-        listaComentarios = new ArrayList<>();
+        comentarioDao = new ComentarioDaoBd();
         
     }
     
     public void inserir(Comentario comentario) {
-        listaComentarios.add(comentario);
+        comentarioDao.salvar(comentario);
     }
     
     public List<Comentario> listar() {
-        return listaComentarios;
+        return comentarioDao.listar();
     }
     
     public Comentario buscarPorId(int id) {
-        for(Comentario c:listaComentarios) {
-            if(c.getId() == id) {
-                return new Comentario(c.getId(),c.getNome(),c.getTexto());
-            }
-        }
-        return null;
+        return comentarioDao.procurarPorId(id);
     }
     
-    private int getIndice(int id) {
-        for(int i=0;i<listaComentarios.size();i++){
-            if(listaComentarios.get(i).getId() == id) {
-                return i;
-            }
-        }
-        return -1;
-    }
-    
+   
     public void atualizar(Comentario comentario) {
-        listaComentarios.set(this.getIndice(comentario.getId()), 
-            comentario);
+        comentarioDao.atualizar(comentario);
     }
     
     public void excluir(Comentario comentario) {
-        listaComentarios.remove(this.getIndice(comentario.getId()));
+        comentarioDao.deletar(comentario);
     }
 }

@@ -195,25 +195,7 @@ public class ContatoDaoBd implements ContatoDao {
         return (null);
     }
 
-    @Override
-    public void deletar(int id) {
-          try {
-            String sql = "DELETE FROM contato WHERE id = ?";
-            
-            
-            conectar(sql);
-            comando.setInt(1, id);
-            comando.executeUpdate();
-            JOptionPane.showMessageDialog(null,"Contato removido com sucesso.");
-        } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null,"Erro ao remover contato.");
-            throw new RuntimeException(ex);
-        } finally {
-            fecharConexao();
-        }
-
-   
-    }
+    
     
 }
 

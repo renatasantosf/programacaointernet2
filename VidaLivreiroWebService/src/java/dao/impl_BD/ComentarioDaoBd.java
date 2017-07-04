@@ -183,24 +183,7 @@ public class ComentarioDaoBd implements ComentarioDao {
         return (null);
     }
 
-    @Override
-    public void deletar(int id) {
-          try {
-            String sql = "DELETE FROM comentario WHERE id = ?";
-            
-            
-            conectar(sql);
-            comando.setInt(1, id);
-            comando.executeUpdate();
-            JOptionPane.showMessageDialog(null,"Comentário removido com sucesso.");
-        } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null,"Erro ao remover comentário.");
-            throw new RuntimeException(ex);
-        } finally {
-            fecharConexao();
-        }
-
+  
    
-    }
     
 }
