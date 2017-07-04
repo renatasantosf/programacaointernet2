@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MzBaseModal } from "ng2-materialize/dist";
+
 import { PostagemecomentarioService } from "app/postagemecomentario.service";
 
 @Component({
@@ -7,10 +7,10 @@ import { PostagemecomentarioService } from "app/postagemecomentario.service";
   templateUrl: './paineladdpostagem.component.html',
   styleUrls: ['./paineladdpostagem.component.css']
 })
-export class PaineladdpostagemComponent  extends MzBaseModal implements OnInit{
+export class PaineladdpostagemComponent implements OnInit{
   // postagem: Postagem;
   constructor(private servico: PostagemecomentarioService) {
-     super();
+    
   }
 
   ngOnInit() {

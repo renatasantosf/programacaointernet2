@@ -20,11 +20,11 @@ export class SenhaEsquecidaComponent implements OnInit {
 	}
 
 	recuperarConta() {
-		if(this.servico.gerarSenha(this.email)) {
+		/*if(this.servico.gerarSenha(this.email)) {
 			this.router.navigate(['/login']);
 		} else {
 			alert("E-mail não cadastrado.");
-		}
+		}*/
 	}
 
 }

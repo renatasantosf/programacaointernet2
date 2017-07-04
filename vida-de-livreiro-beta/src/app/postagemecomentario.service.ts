@@ -1,30 +1,37 @@
 import { Injectable } from '@angular/core';
 import { Comentario } from "app/comentario";
+import { Http, Response, Headers, RequestOptions} from '@angular/http';
+import { Observable } from 'rxjs/RX'
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
+
 
 @Injectable()
 export class PostagemecomentarioService {
- comentarios:Comentario[] = []
- autoIncrementComentario: number = 0;
+  comentarios:Comentario[] = []
+  urlResource = "http://localhost:8080/VidaLivreiroWebService/webresources/comentario";
+ 
+  constructor(private http: Http) { 
 
-  constructor() {
-
-
-   }
-
-  getComentarios() {
-    return this.comentarios;
   }
 
-   adicionarComentario(comentario:Comentario) {
-		  comentario.codigo = this.autoIncrementComentario++;
-      this.comentarios.push(comentario);
+
+  getComentarios() : Observable<Comentario[]> {
+      return this.http.get(this.urlResource)
+        .map((res:Response)=>res.json())
+        .catch((error:any)=>Observable.throw(error));
    }
 
-    removerComentario(comentario:Comentario) {
-      let indice = this.comentarios.indexOf(comentario, 0);
-      if(indice > -1) {
-        this.comentarios.splice(indice, 1);
-      }
-    }
+   adicionarComentario(comentario) :Observable<Comentario> {
+      let bodyString = JSON.stringify(comentario);
+      console.log(bodyString);
+      let headers = new Headers({'Content-Type':'application/json'})
+      let options = new RequestOptions({headers:headers});
+      return this.http.post(this.urlResource, bodyString, options)
+        .map((res:Response)=>{})
+        .catch((error:any)=>Observable.throw(error));
+   }
+
+   
 
 }

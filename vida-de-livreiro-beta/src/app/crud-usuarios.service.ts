@@ -7,7 +7,10 @@ import { Parceiro } from "app/parceiro";
 
 @Injectable()
 export class CrudUsuariosService {
-  usuarios: Usuario[] = []
+  usuarios:Usuario[] = 
+  [
+    {codigo:1,nome:"Renata fraga",senha:"123",email:"re"}
+  ]
   pedidos: Pedido[] = []
   comentarios:Comentario[] = []
   contatos:Contato[] = []
@@ -47,29 +50,13 @@ export class CrudUsuariosService {
    return this.usuarioAtivo;
  }
 
-  adicionarPedido(pedido:Pedido) {
-    pedido.codigo = this.autoIncrementPedido++;
-    pedido.cod_usuario = this.getUsuarioPorCodigo().codigo;
-    this.pedidos.push(pedido);
-  }
+  
 
   
-  getPedidoPorCodigo(codigo:number) {
-    return(this.pedidos.find(pedido => pedido.codigo == codigo));
-  }
+ 
   
-  removerPedido(pedido:Pedido) {
-    let indice = this.pedidos.indexOf(pedido, 0);
-    if(indice > -1) {
-      this.pedidos.splice(indice, 1);
-    }
-  }
 
-
-  atualizaPedido(codigo:number,pedido:Pedido) {
-    let indice = this.pedidos.indexOf(this.getPedidoPorCodigo(codigo),0);
-    this.pedidos[indice] = pedido;
-  }
+  
 
 
 	

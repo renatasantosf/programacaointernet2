@@ -22,7 +22,7 @@ export class ModalCadastroParceirosComponent extends MzBaseModal implements OnIn
 	}
 
 
-	salvarParceiro() {
+/*salvarParceiro() {
 		if(this.parceiro.email == null) {
 			alert("O e-mail é obrigatório.");
 		} else {
@@ -40,5 +40,5 @@ export class ModalCadastroParceirosComponent extends MzBaseModal implements OnIn
 		this.parceiro = new Parceiro();
 	}
 
- 
+ */
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Comentario } from "app/comentario";
 import { CrudUsuariosService } from "app/crud-usuarios.service";
 import { Router, ActivatedRoute } from "@angular/router";
+import { PostagemecomentarioService } from "app/postagemecomentario.service";
 
 @Component({
   selector: 'app-postagem',
@@ -10,13 +11,15 @@ import { Router, ActivatedRoute } from "@angular/router";
 })
 export class PostagemComponent implements OnInit {
    comentario:Comentario;
-  
-	constructor(private servico:CrudUsuariosService) {
+   erro: string;
+   indice:number;
+
+	constructor(private servico:PostagemecomentarioService) {
     
 	}
 
 	ngOnInit() {
-		this.comentario = new Comentario();
+		
 	}
 
 	salvarComentario() {
@@ -26,9 +29,9 @@ export class PostagemComponent implements OnInit {
 			if(this.comentario.nome == null && this.comentario.texto == null) {
 				alert("Campos vazios");
 			} else {
+				console.log(this.comentario);
 				this.servico.adicionarComentario(this.comentario);
-				alert("Comentário inserido com sucesso!"+this.comentario.nome+" - "+this.comentario.texto);
-				this.comentario = new Comentario();
+				alert("Cadastrado com sucesso.");
 			}
 		}
 	}

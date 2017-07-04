@@ -3,8 +3,5 @@ export class Usuario {
     nome:string;
     senha:string;
     email: string;
-    sobre:string;
-    senhaAux1:string;
-    senhaAux2:string;
-   
+    
 }
