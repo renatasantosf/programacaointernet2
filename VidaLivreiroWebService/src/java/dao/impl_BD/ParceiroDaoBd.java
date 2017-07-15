@@ -46,7 +46,7 @@ public class ParceiroDaoBd implements ParceiroDao {
 
     }  
 
-  //int id, String nomePagina, String urlPagina, String nomeWebMaster, String email
+ 
     @Override
     public void salvar(Parceiro parceiro) {
         int id = 0;
@@ -129,7 +129,7 @@ public class ParceiroDaoBd implements ParceiroDao {
     public List<Parceiro> listar() {
         List<Parceiro> listaParceiros = new ArrayList<>();
 
-        String sql = "SELECT  FROM parceiro";
+        String sql = "SELECT * FROM parceiro";
 
         try {
             conectar(sql);
@@ -138,7 +138,7 @@ public class ParceiroDaoBd implements ParceiroDao {
             while (resultado.next()) {
                 int id = resultado.getInt("id");
                 String nomePagina = resultado.getString("nomepagina");
-                String urlPagina = resultado.getString("urlPagina");
+                String urlPagina = resultado.getString("urlpagina");
                 String nomeWebMaster = resultado.getString("nomewebmaster");
                 String email = resultado.getString("email");
                 

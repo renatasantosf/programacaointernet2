@@ -1,6 +1,7 @@
 export class Comentario {
-    codigo:number;
+    id:number;
     nome:string;
     texto:string;
-        
+    
+    
 }

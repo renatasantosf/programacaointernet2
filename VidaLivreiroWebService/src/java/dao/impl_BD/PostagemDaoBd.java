@@ -54,15 +54,14 @@ public class PostagemDaoBd implements PostagemDao {
         int id = 0;
         try {
             
-            String sql = "INSERT INTO postagem (titulo,texto,dtpostagem,usuario_email) "
-                    + "VALUES (?,?,?,?)";
+            String sql = "INSERT INTO postagem (titulo,texto,dtpostagem) "
+                    + "VALUES (?,?,?)";
 
             //Foi criado um novo método conectar para obter o id
             conectarObtendoId(sql);
             comando.setString(1, postagem.getTitulo());
             comando.setString(2, postagem.getTexto());
             comando.setDate(3, java.sql.Date.valueOf(LocalDate.now()));
-            comando.setString(4 , usuarioDao.procurarPorEmail(postagem.getUsuario().getEmail()));
             comando.executeUpdate();
             //Obtém o resultSet para pegar o id
             ResultSet resultado = comando.getGeneratedKeys();
@@ -107,14 +106,13 @@ public class PostagemDaoBd implements PostagemDao {
     public void atualizar(Postagem postagem) {
         UsuarioDaoBd usuarioDao = new UsuarioDaoBd();
         try {
-            String sql = "UPDATE postagem SET titulo=?, texto=?, dtPostagem=?, usuario_email=?"
+            String sql = "UPDATE postagem SET titulo=?, texto=?, dtPostagem=?"
                     + "WHERE id=?";
 
             conectar(sql);
             comando.setString(1, postagem.getTitulo());
             comando.setString(2, postagem.getTexto());
             comando.setDate(3, java.sql.Date.valueOf(LocalDate.now()));
-            comando.setString(4, usuarioDao.procurarPorEmail(postagem.getUsuario().getEmail()));
             comando.setInt(4, postagem.getId());
             comando.executeUpdate();
 
@@ -130,9 +128,8 @@ public class PostagemDaoBd implements PostagemDao {
     @Override
     public List<Postagem> listar() {
         List<Postagem> listaPostagens = new ArrayList<>();
-        UsuarioDaoBd usuarioDao = new UsuarioDaoBd();
-
-        String sql = "SELECT id,titulo,texto,dtpostagem FROM postagem";
+ 
+        String sql = "SELECT id,titulo,dtpostagem FROM postagem";
         
         try {
             conectar(sql);
@@ -142,12 +139,10 @@ public class PostagemDaoBd implements PostagemDao {
             while (resultado.next()) {
                 int id = resultado.getInt("id");
                 String titulo = resultado.getString("titulo");
-                String texto = resultado.getString("texto");
                 LocalDate dtPostagem = resultado.getDate("dtpostagem").toLocalDate();
-                String email = resultado.getString("usuario_email");
+           
                 
-                Postagem postagem = new Postagem(id, titulo, texto, dtPostagem,
-                        usuarioDao.retornarUsuarioPorEmail(email));
+                Postagem postagem = new Postagem(id, titulo, dtPostagem);                 
 
                 listaPostagens.add(postagem);
 
@@ -165,9 +160,9 @@ public class PostagemDaoBd implements PostagemDao {
 
     @Override
     public Postagem procurarPorId(int id) {
-        UsuarioDaoBd usuarioDao = new UsuarioDaoBd();
         
-        String sql = "SELECT id,titulo,texto,dtpostagem,usuario_email FROM postagem WHERE id = ?";
+        
+        String sql = "SELECT id,titulo,texto,dtpostagem FROM postagem WHERE id = ?";
 
         try {
             conectar(sql);
@@ -179,10 +174,9 @@ public class PostagemDaoBd implements PostagemDao {
                 String titulo = resultado.getString("titulo");
                 String texto = resultado.getString("texto");
                 LocalDate dtPostagem = resultado.getDate("dtpostagem").toLocalDate();
-                String email = resultado.getString("usuario_email");
+             
                 
-                Postagem postagem = new Postagem(id, titulo, texto, dtPostagem,
-                        usuarioDao.retornarUsuarioPorEmail(email));
+                Postagem postagem = new Postagem(id, titulo, texto, dtPostagem);
                 
 
                 return postagem;

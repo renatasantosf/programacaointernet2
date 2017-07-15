@@ -3,12 +3,14 @@ import dao.ParceiroDao;
 import dao.impl_BD.ParceiroDaoBd;
 import java.util.List;
 import model.Parceiro;
+import javax.ejb.Stateless;
 
 /**
  *
  * @author 631510049
  */
 
+@Stateless
 public class ParceiroService {
      private ParceiroDao parceiroDao;
     
@@ -34,7 +36,5 @@ public class ParceiroService {
         parceiroDao.atualizar(parceiro);
     }
     
-    public void excluir(Parceiro parceiro) {
-       parceiroDao.deletar(parceiro);
-    }
+  
 }

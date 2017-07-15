@@ -1,0 +1,31 @@
+<div class="container">
+         <div class="row">
+              <div class = "col s4">
+                  <app-menu-adm> </app-menu-adm>
+              </div>
+        <div class="col s7">
+          <h1> Publicações </h1>
+             <button mz-button (click)="openServiceModal()">NOVO </button>
+          <table>
+                <thead>
+                  <tr>
+                      <th>Id</th>
+                      <th>Titulo</th>
+                      <th>Data</th>
+                      <th>Editar</th>
+                      <th>Remover</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor='let postagem of postagens;let ind=index'> 
+                    <td>{{postagem.id}}</td>
+                    <td>{{postagem.titulo}}</td>
+                    <td>{{postagem.dtpostagem}}</td>
+                    <td> <a class="waves-effect waves-light btn">Editar</a></td>
+                    <td><a class="waves-effect waves-light btn">Remover</a></td>
+                  </tr>
+                </tbody>
+            </table>
+         </div>
+</div>
+</div>

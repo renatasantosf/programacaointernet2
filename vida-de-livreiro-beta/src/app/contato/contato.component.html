@@ -1,0 +1,30 @@
+<div class="container">
+         <div class="row">
+              <div class = "col s4">
+                  <app-menu-adm> </app-menu-adm>
+              </div>
+        <div class="col s7">
+                  
+				<div id="contatos"> 
+				    <h1> Contatos </h1>
+					  <table>
+              <tr>
+                  <th>Id</th>
+                  <th>Nome Completo</th>
+                  <th>E-mail</th>
+                  <th>Telefone</th>
+                  <th>Mensagem</th>
+
+              </tr>
+             <tr *ngFor='let contato of contatos;let ind=index'>
+                <td>{{contato.id}}</td>
+                <td>{{contato.nome}} {{contato.sobrenome}}</td>
+                <td>{{contato.email}}</td>
+                <td>{{contato.telefone}}</td>
+                <td>{{contato.mensagem}}</td>
+            </tr>
+            </table>
+				</div>
+         </div>
+</div>
+</div>

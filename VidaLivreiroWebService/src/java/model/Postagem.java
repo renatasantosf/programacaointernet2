@@ -15,34 +15,34 @@ public class Postagem implements Serializable {
      private String titulo;
      private String texto;
      private LocalDate dtPostagem;
-     private Usuario usuario;
+    
 
-    public Postagem(int id, String titulo, String texto, LocalDate dtPostagem,Usuario usuario) {
+    public Postagem(int id, String titulo, String texto, LocalDate dtPostagem) {
         this.id = id;
         this.titulo = titulo;
         this.texto = texto;
         this.dtPostagem = dtPostagem;
-        this.usuario = usuario;
+        
     }
 
-    public Postagem(String titulo, String texto, LocalDate dtPostagem, Usuario usuario) {
+    public Postagem(String titulo, String texto, LocalDate dtPostagem) {
         this.titulo = titulo;
         this.texto = texto;
         this.dtPostagem = dtPostagem;
-        this.usuario = usuario;
+        
     }
     
+    
+    public Postagem(int id, String titulo, LocalDate dtPostagem) {
+        this.id = id;
+        this.titulo = titulo;
+        this.dtPostagem = dtPostagem;
+        
+    }
 
     public Postagem() {
     }
 
-    public Usuario getUsuario() {
-        return usuario;
-    }
-
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
-    }
 
     public int getId() {
         return id;

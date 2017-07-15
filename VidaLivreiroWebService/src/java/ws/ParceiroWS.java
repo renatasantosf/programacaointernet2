@@ -14,9 +14,10 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.UriInfo;
+import model.Comentario;
 import model.Parceiro;
+import service.ComentarioService;
 import service.ParceiroService;
-
 
 
 
@@ -31,25 +32,20 @@ public class ParceiroWS {
     @Context
     private UriInfo context;
 
-    /**
-     * Creates a new instance of PostagemWS
-     */
+    
     public ParceiroWS() {
     }
+    
+    
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public List<Parceiro> getParceiros() {
-        
+    public List<Parceiro> getParceiros(@Context final HttpServletResponse response) {
+        response.setHeader("Acess-Control-Allow-Origin", "*");
         return parceiroService.listar();
     }
     
-    @GET
-    @Path("/{id}")
-    @Produces(MediaType.APPLICATION_JSON)
-    public Parceiro getParceiro(@PathParam("id") int id) {
-        return parceiroService.buscarPorId(id);
-    }
+   
     
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
@@ -66,28 +62,7 @@ public class ParceiroWS {
             }
        
     }
-    /*
-    @PUT
-    @Path("/{id}")
-    @Consumes(MediaType.APPLICATION_JSON)
-    public void alterarParceiro(@PathParam("id") int id,
-            Parceiro parceiro) {
-        Parceiro p = parceiroService.buscarPorId(id);
-        p.setNomePagina(parceiro.getNomePagina());
-        p.setUrlPagina(parceiro.getUrlPagina());
-        p.setNomeWebMaster(parceiro.getNomeWebMaster());
-        p.setEmail(parceiro.getEmail());
-    }
     
-    
-    @DELETE
-    @Path("/{id}")
-    @Produces(MediaType.APPLICATION_JSON)
-    public Parceiro removerParceiro(@PathParam("id") int id) {
-        Parceiro p = parceiroService.buscarPorId(id);
-        parceiroService.excluir(p);
-        return p;
-
-    }*/
+   
 }
 

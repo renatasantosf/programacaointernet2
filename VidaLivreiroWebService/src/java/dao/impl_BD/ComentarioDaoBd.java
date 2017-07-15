@@ -124,7 +124,7 @@ public class ComentarioDaoBd implements ComentarioDao {
     public List<Comentario> listar() {
         List<Comentario> listaComentarios = new ArrayList<>();
 
-        String sql = "SELECT id,nome,texto username FROM comentario";
+        String sql = "SELECT id,nome,texto FROM comentario";
 
         try {
             conectar(sql);

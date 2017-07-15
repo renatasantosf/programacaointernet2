@@ -4,6 +4,6 @@ export class Contato {
     email:string;
     telefone:string;
     mensagem:string;
-    codigo:number;
+    id:number;
     
 }

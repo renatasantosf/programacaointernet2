@@ -1,0 +1,20 @@
+<mz-modal [fixedFooter]="true">
+  <mz-modal-header> Nova Postagem </mz-modal-header>
+  <mz-modal-content>
+      <mz-input-container class="col s11">
+             <input name="titulo" mz-input [label]="'Título:'" id="nome-input" 
+             [(ngModel)] = "postagem.titulo" type="text"> 
+      </mz-input-container>
+     <mz-textarea-container>
+         <i mz-icon-mdi mz-textarea-prefix [icon]="'message-reply-text'"> </i>
+         <textarea mz-textarea [label]="'Texto'"  id="comment-textarea"
+         name="texto" [(ngModel)] = "postagem.texto"
+    length="2000"></textarea>
+</mz-textarea-container>
+      
+  </mz-modal-content>
+  <mz-modal-footer>
+    <button mz-button [flat]="true" (click) = "salvar()">Salvar</button>
+   
+  </mz-modal-footer>
+</mz-modal>

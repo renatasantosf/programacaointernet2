@@ -42,30 +42,30 @@ public class PostagemWS {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public List<Postagem> getPostagens() {
+    public List<Postagem> getPostagens(@Context final HttpServletResponse response) {
+        response.setHeader("Acess-Control-Allow-Origin", "*");
         return postagemService.listar();
     }
     
-    @GET
-    @Path("/{id}")
-    @Produces(MediaType.APPLICATION_JSON)
-    public Postagem getPostagem(@PathParam("id") int id) {
-        return postagemService.buscarPorId(id);
-    }
+   
     
+   
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     public void adicionarPostagem(Postagem p, @Context
-    final HttpServletResponse response) throws Exception  {
+    final HttpServletResponse response) {
         
         postagemService.inserir(p);
         response.setStatus(HttpServletResponse.SC_CREATED);
-        try {
-            response.flushBuffer();
-        } catch(IOException e) {
-            throw new InternalServerErrorException();
-        }
+       
+            try {
+                response.flushBuffer();
+            } catch (java.io.IOException ex) {
+                throw new InternalServerErrorException();
+            }
+       
     }
+    
     
     
     @PUT

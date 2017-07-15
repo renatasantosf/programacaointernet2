@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Comentario } from "app/comentario";
 import { CrudUsuariosService } from "app/crud-usuarios.service";
 import { Router, ActivatedRoute } from "@angular/router";
-import { PostagemecomentarioService } from "app/postagemecomentario.service";
 
 @Component({
   selector: 'app-postagem',
@@ -12,29 +11,32 @@ import { PostagemecomentarioService } from "app/postagemecomentario.service";
 export class PostagemComponent implements OnInit {
    comentario:Comentario;
    erro: string;
-   indice:number;
-
-	constructor(private servico:PostagemecomentarioService) {
+  
+  constructor(private servico:CrudUsuariosService, private router: Router,
+              private rota:ActivatedRoute) {
     
-	}
+   }
 
-	ngOnInit() {
-		
-	}
+  ngOnInit() {
+    this.comentario = new Comentario();
+  }
 
-	salvarComentario() {
-		if(this.comentario.nome != null && this.comentario.texto == null) {
-			alert("Preencha o campo comentário.");
-		} else {
-			if(this.comentario.nome == null && this.comentario.texto == null) {
-				alert("Campos vazios");
-			} else {
-				console.log(this.comentario);
-				this.servico.adicionarComentario(this.comentario);
-				alert("Cadastrado com sucesso.");
-			}
-		}
-	}
-	
+salvarComentario() {
+    if(this.comentario.nome != null && this.comentario.texto == null) {
+        alert("Preencha o campo comentário.");
+
+    } else {
+      if(this.comentario.nome == null && this.comentario.texto == null) {
+        alert("Campos vazios");
+      } else {
+        this.servico.adicionarComentario(this.comentario).subscribe(
+          comentario => this.router.navigate(['/inicial']),
+          error => this.erro = error
+        );
+         alert("Comentário inserido com sucesso!");
+         this.comentario = new Comentario();
+      }
+    }
+}
 
 }

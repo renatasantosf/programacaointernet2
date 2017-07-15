@@ -10,7 +10,6 @@ export class PaginainicialComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-  
   }
 
 }

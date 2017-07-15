@@ -1,31 +1,26 @@
-
-	<mz-modal [fixedFooter]="true">
-		<mz-modal-header> Cadastre-se </mz-modal-header>
-		<mz-modal-content>
-			<mz-input-container class="col s11">
-				<input mz-input [label]="'Nome da Página:'" id="nome-input" placeholder="Digite seu nome"
-				[(ngModel)] = "parceiro.nomePagina" type="text"> 
-			</mz-input-container>
-			
-			<mz-input-container class="col s11">  
-				<input mz-input [label]="'URL:'" id="url-input" placeholder="Digite a URL da sua página"
-				type="text" [(ngModel)] = "parceiro.urlPagina">
-			</mz-input-container>
-			
-			<mz-input-container class="col s11">
-				<input mz-input [label]="'Web Master:'" id="url-input" placeholder="Digite o nome do Web Master"
-				type="text" [(ngModel)] = "parceiro.nomeWebMaster">
-			</mz-input-container>
-			
-			<mz-input-container class="col s11">  
-				<input mz-input [label]="'E-mail:'" id="email-input" placeholder="Digite seu e-mail"
-				type="email" [(ngModel)] = "parceiro.email">
-			</mz-input-container>
-		  
-		</mz-modal-content>
-		
-		<mz-modal-footer>
-			<button mz-button [flat]="true" mz-modal-close (click) = "salvarParceiro()">Cadastrar</button>
-			<button mz-button [flat]="true" (click) = "limpar()">Limpar</button>
-		</mz-modal-footer>
-	</mz-modal>
+<mz-modal [fixedFooter]="true">
+  <mz-modal-header> Cadastre-se </mz-modal-header>
+  <mz-modal-content>
+      <mz-input-container class="col s11">
+             <input name="nomepagina" mz-input [label]="'Nome da Página:'" id="nome-input" placeholder="Digite seu nome"
+             [(ngModel)] = "parceiro.nomePagina" type="text"> 
+      </mz-input-container>
+      <mz-input-container class="col s11">  
+           <input name="urlpagina" mz-input [label]="'URL:'" id="url-input" placeholder="Digite a URL da sua página"
+           type="text" [(ngModel)] = "parceiro.urlPagina">
+      </mz-input-container>
+       <mz-input-container class="col s11">
+           <input name="nomewebmaster" mz-input [label]="'Web Master:'" id="url-input" placeholder="Digite o nome do Web Master"
+           type="text" [(ngModel)] = "parceiro.nomeWebMaster">
+     </mz-input-container>
+      <mz-input-container class="col s11">  
+           <input name="email" mz-input [label]="'E-mail:'" id="email-input" placeholder="Digite seu e-mail"
+           type="email" [(ngModel)] = "parceiro.email">
+       </mz-input-container>
+      
+  </mz-modal-content>
+  <mz-modal-footer>
+    <button mz-button [flat]="true" (click) = "salvarParceiro()">Cadastrar</button>
+    <button mz-button [flat]="true" (click) = "limpar()">Limpar</button>
+  </mz-modal-footer>
+</mz-modal>

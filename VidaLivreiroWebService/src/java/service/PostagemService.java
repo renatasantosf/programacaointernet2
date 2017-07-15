@@ -13,6 +13,7 @@ import model.Postagem;
  *
  * @author 631510049
  */
+
 @Stateless
 public class PostagemService {
     
@@ -22,14 +23,8 @@ public class PostagemService {
         postagemDao = new PostagemDaoBd();
     }
     
-    public void inserir(Postagem postagem) throws Exception {
-         if(postagem.getTitulo() == null || postagem.getTitulo().isEmpty()) {
-              throw new Exception("Campo obrigatorio");
-         }
-         if(postagem.getTexto() == null ||  postagem.getTexto().isEmpty()) {
-             throw new Exception("Campo obrigatório");
-         }
-           
+    public void inserir(Postagem postagem) {
+               
          postagemDao.salvar(postagem);
     }
     
